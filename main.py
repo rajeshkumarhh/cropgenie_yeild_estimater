@@ -91,3 +91,19 @@ plt.close()
 print("\n" + "="*50)
 print("PROJECT COMPLETE. Check your Colab files for the two image plots!")
 print("="*50)
+
+
+import joblib  # joblib is more efficient for large numpy objects like sklearn models
+
+# Save both trained models
+joblib.dump(model_lr_pipeline, 'model_logistic_regression.pkl')
+joblib.dump(model_rf_pipeline, 'model_random_forest.pkl')
+
+print("\n" + "="*50)
+print("STAGE 7: TRAINED MODELS SAVED SUCCESSFULLY")
+print("="*50)
+print("Saved files:")
+print(" - model_logistic_regression.pkl")
+print(" - model_random_forest.pkl")
+print("\nYou can load them later with:")
+print("   model = joblib.load('model_random_forest.pkl')")
